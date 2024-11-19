@@ -15,7 +15,15 @@ router.get('/:id', (req, res)=>{
 })
 //store
 router.post('/', (req, res)=>{
-    res.send("creazione elemento")
+    let obj = {
+        title: "cavolo cappuccio",
+        slug: "cavolo-cappuccio",
+        content: `il cavolo cappuccio è una verdura di origine lombarda e precisamente della Brianza, la zona compresa tra la provincia a nord di Milano e il lago di Lecco-Como!`,
+        image: "cavolo-cappuccio.jpeg",
+        tags: ["verdure", "verdure al cioccolato", "verdureee", "Ricette vegetariane", "Ricette al forno"],
+    }
+    posts.push(obj)
+    res.send("creato elemento")
 })
 //Update
 router.put('/:id', (req, res)=>{
