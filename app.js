@@ -14,7 +14,12 @@ app.get('/posts', (req, res)=>{
     res.json(posts)
 })
 //Show
-
+app.get('/posts/:id', (req, res)=>{
+    console.log("ritorno del post rischiesto");
+    const id = parseInt(req.params.id)
+    const post = posts[id]
+    res.json(post)
+})
 //Create
 
 //Update
