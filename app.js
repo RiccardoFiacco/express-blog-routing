@@ -21,7 +21,9 @@ app.get('/posts/:id', (req, res)=>{
     res.json(post)
 })
 //Create
-
+app.get('/posts/:id', (req, res)=>{
+    res.send("creazione elemento")
+})
 //Update
 
 //Modify
