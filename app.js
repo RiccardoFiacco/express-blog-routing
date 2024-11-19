@@ -26,7 +26,9 @@ app.post('/posts', (req, res)=>{
     res.send("creazione elemento")
 })
 //Update
-
+app.put('/posts/:id', (req, res)=>{
+    res.send("modifica tutto elemento")
+})
 //Modify
 
 //Delete
