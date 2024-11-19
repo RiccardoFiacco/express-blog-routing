@@ -34,3 +34,6 @@ app.patch('/posts/:id', (req, res)=>{
     res.send("modifica parte dell elemento")
 })
 //Delete
+app.delete('/posts/:id', (req, res)=>{
+    res.send("eliminiazione dell elemento")
+})
