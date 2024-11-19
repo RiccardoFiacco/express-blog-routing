@@ -8,6 +8,7 @@ app.use(express.static('public'));//rendiamo il contenuto della cartella public 
 app.listen(port, ()=>{ //mettiamo il server in ascolto alla porta numero 3000
     console.log(`in ascolto sulla porta ${port}`)
 })
+
 //Index
 app.get('/posts', (req, res)=>{
     console.log("lista dei post");
@@ -20,8 +21,8 @@ app.get('/posts/:id', (req, res)=>{
     const post = posts[id]
     res.json(post)
 })
-//Create
-app.get('/posts/:id', (req, res)=>{
+//store
+app.post('/posts', (req, res)=>{
     res.send("creazione elemento")
 })
 //Update
