@@ -30,5 +30,7 @@ app.put('/posts/:id', (req, res)=>{
     res.send("modifica tutto elemento")
 })
 //Modify
-
+app.patch('/posts/:id', (req, res)=>{
+    res.send("modifica parte dell elemento")
+})
 //Delete
