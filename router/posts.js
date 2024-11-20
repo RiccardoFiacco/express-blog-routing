@@ -1,41 +1,17 @@
 const express = require('express')
 const router = express.Router();
-const posts = require('../data/posts.js'); //importiamo i post
+const postController = require("../controller/postController.js")
 //Index
-router.get('/', (req, res)=>{
-    console.log("lista dei post");
-    res.json(posts)
-})
+router.get('/', postController.index)
 //Show
-router.get('/:id', (req, res)=>{
-    console.log("ritorno del post rischiesto");
-    const id = parseInt(req.params.id)
-    const post = posts[id]
-    res.json(post)
-})
+router.get('/:id', postController.show)
 //store
-router.post('/', (req, res)=>{
-    let obj = {
-        title: "cavolo cappuccio",
-        slug: "cavolo-cappuccio",
-        content: `il cavolo cappuccio è una verdura di origine lombarda e precisamente della Brianza, la zona compresa tra la provincia a nord di Milano e il lago di Lecco-Como!`,
-        image: "cavolo-cappuccio.jpeg",
-        tags: ["verdure", "verdure al cioccolato", "verdureee", "Ricette vegetariane", "Ricette al forno"],
-    }
-    posts.push(obj)
-    res.send("creato elemento")
-})
+router.post('/',postController.store)
 //Update
-router.put('/:id', (req, res)=>{
-    res.send("modifica tutto elemento")
-})
+router.put('/:id',postController.update)
 //Modify
-router.patch('/:id', (req, res)=>{
-    res.send("modifica parte dell elemento")
-})
-//Delete
-router.delete('/:id', (req, res)=>{
-    res.send("eliminiazione dell elemento")
-})
+router.patch('/:id',postController.modify)
+//Destroy
+router.delete('/:id', postController.destroy)
 
 module.exports= router;
